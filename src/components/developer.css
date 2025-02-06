@@ -1,0 +1,169 @@
+:root {
+    --primary: #2a9d8f;
+    --secondary: #264653;
+    --accent: #e9c46a;
+    --text: #2b2d42;
+    --light: #f8f9fa;
+  }
+  
+  .dev-section {
+    border: 2px solid transparent;
+    padding-top: 60px;
+    height: 540px;
+    background-color: var(--light);
+  }
+  
+  .dev-container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .sect-title {
+    text-align: center;
+    font-size: 2.5rem;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: teal;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+ 
+  .sect-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #E9C46A;
+}
+
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+  }
+  
+  .dev-grid {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+  
+  .dev-card {
+    background: white;
+    border-radius: 15px;
+    background: linear-gradient(45deg, transparent, rgba(42,157,143,0.1));
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .dev-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-image {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+  }
+   
+   .profile-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid; */
+    height: 170px;
+   }
+  .card-image img {
+    width: 130px;
+    
+    border-radius: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .social-links {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .dev-card:hover .social-links {
+    opacity: 1;
+  }
+  
+  .social-links a {
+    color: white;
+    background: rgba(0,0,0,0.7);
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    transition: background 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background: var(--primary);
+  }
+  
+  .card-body {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .card-body h3 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .bio {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .skills {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .dev-section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .dev-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }

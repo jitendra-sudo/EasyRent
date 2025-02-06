@@ -1,0 +1,266 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(243, 243, 243, 0.411);
+}
+
+
+#H-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 12px 12px;
+    background: rgba(8, 8, 8, 0.1);
+    padding: 5px 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000; 
+}
+
+
+.H-Img{
+    display: inline-block;
+}
+.H-Img img{
+    width: 150px;
+}
+
+.H-nav-bar{
+    display: flex;
+    justify-content:space-between;
+    width: 450px;
+}
+
+.H-nav-bar a{
+     text-decoration: none;
+     font-weight: bold;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     color:teal;
+}
+.H-nav-bar a:hover{
+    color: #1860e6;
+}
+
+/* #Home {
+    background: url('backgimg.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    width: 100%;
+    height: 100vh;
+} */
+
+/* login  */
+.Home-page{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid transparent;
+    padding-top: 60px;
+    height: 540px;
+}
+.H-title{
+    /* border: 2px solid black; */
+    padding-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.H-title h1{
+    /* font-size: 40px; */
+    text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitle{
+    margin-top: 50px;
+}
+.H-title p{
+    font-size: 20px;
+    font-weight: bold;
+    /* text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    color: rgb(71, 66, 66);
+
+    
+}
+.H-title h1 span{
+    color:teal;
+   
+}
+
+
+
+.Home-Auth{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login{
+    /* border: 2px solid; */
+        background: linear-gradient(45deg, transparent, rgba(42,157,143,0.11));
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* background: white; */
+    padding: 0px 50px 50px 50px;
+    border-radius: 16px;
+
+}
+.login h1{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: teal;
+}
+.login .label2 {
+    display: block;
+    
+    /* font-weight: bold; */
+    padding: 10px 0px;
+}
+
+.login  input{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    background: transparent;
+}
+
+.login input:hover{
+   border-bottom-color: rgb(41, 41, 184);
+}
+
+#forgetbtn{
+    display: block;
+    width: 100%;
+    text-align: end;
+    background: none;
+    cursor: pointer;
+    color: #0d4dc4;
+    border: none;
+    
+}
+#submit{
+    width: 100%;
+    padding: 6px 0px;
+    border-radius: 6px;
+    border: none;
+    margin: 20px 0px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    border-radius: 15px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+.create{
+    display: flex
+}
+
+.create .label3{
+    font-size: medium;
+}
+#sign{
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+#sign:hover{
+    color: rgb(10, 10, 116);
+}
+
+
+/* sigin up */
+
+.H-Signup{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: linear-gradient(45deg, transparent, rgba(42,157,143,0.11));
+
+    width: 250px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    border-radius: 16px;
+    
+}
+
+.H-Signup h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+     color: teal;
+}
+
+
+
+.H-Signup .label1{
+    display: block;
+    padding: 7px 0px;
+}
+.H-Signup .enter{
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    background: transparent;
+}
+.H-Signup .enter:hover{
+    border-bottom-color: rgb(41, 41, 184);
+}
+
+.H-Signup #aount{
+    width: 100%;
+    padding: 6px 0px;
+    border-radius: 6px;
+    border: none;
+    margin: 20px 0px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    border-radius: 15px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.loginpage label{
+   font-size: 15px;
+}
+.loginpage button{
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #0d4dc4;
+    cursor: pointer;
+}
+.loginpage button:hover{
+    color: #052f7c;
+}
+
+
+.footer{
+     background: rgb(241, 76, 104) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.footer p{
+    color: white;
+    
+}
+
