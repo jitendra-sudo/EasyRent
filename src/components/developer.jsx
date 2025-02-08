@@ -46,7 +46,7 @@ const Developers = () => {
               </div>
 
               <div className="card-body">
-                <h3>Sharvali Patil</h3>
+                <h3>Sharvari Patil</h3>
                 <p className="role">Frontend Developer</p>
                 <p className="bio">Specializes in React and UI/UX design</p>
                 <div className="skills"><span ><FaCode /></span></div>

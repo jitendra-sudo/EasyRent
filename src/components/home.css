@@ -11,7 +11,7 @@ body{
     justify-content: space-between;
     align-items: center;
     border-radius: 0px 0px 12px 12px;
-    background: rgba(8, 8, 8, 0.1);
+    background: rgba(8, 8, 8, 0.3);
     padding: 5px 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -40,18 +40,18 @@ body{
      text-decoration: none;
      font-weight: bold;
      font-family: Verdana, Geneva, Tahoma, sans-serif;
-     color:teal;
+     color:rgb(255, 255, 255);
 }
 .H-nav-bar a:hover{
     color: #1860e6;
 }
 
-/* #Home {
-    background: url('backgimg.jpg') no-repeat center center fixed; 
+#Home {
+    background: url('rent2.jpg') no-repeat center center fixed; 
     background-size: cover; 
     width: 100%;
     height: 100vh;
-} */
+}
 
 /* login  */
 .Home-page{
@@ -73,7 +73,7 @@ body{
 .H-title h1{
     /* font-size: 40px; */
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: blue;
+    color: hwb(49 5% 10%);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -104,7 +104,7 @@ body{
 }
 .login{
     /* border: 2px solid; */
-        background: linear-gradient(45deg, transparent, rgba(42,157,143,0.11));
+        background: linear-gradient(45deg, transparent, rgba(42,157,143,0.31));
 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* background: white; */
@@ -131,10 +131,16 @@ body{
     border-top: none;
     border-left: none;
     border-right: none;
+   
     border-bottom: 1px solid grey;
     outline: none;
     background: transparent;
 }
+
+.login ::placeholder {
+    color: rgb(70, 62, 62);
+    opacity: 1;
+  }
 
 .login input:hover{
    border-bottom-color: rgb(41, 41, 184);
@@ -186,7 +192,7 @@ body{
 
 .H-Signup{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background: linear-gradient(45deg, transparent, rgba(42,157,143,0.11));
+    background: linear-gradient(45deg, transparent, rgba(42,157,143,0.31));
 
     width: 250px;
     padding-left: 30px;
@@ -220,6 +226,12 @@ body{
     outline: none;
     background: transparent;
 }
+
+
+.H-Signup ::placeholder {
+    color: rgb(70, 62, 62);
+    opacity: 1;
+  }
 .H-Signup .enter:hover{
     border-bottom-color: rgb(41, 41, 184);
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './black-bg.png';
+import logo from './white-bg.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './home.css';
@@ -33,7 +33,7 @@ export const Home = () => {
       setPasswordlogin("");
     } catch (error) {
       console.error('Login failed', error);
-      setError("Something went wrong. Please try again later.");
+      setError("Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -86,8 +86,8 @@ export const Home = () => {
         <main id='Home'  >
           <div className='Home-page'>
             <div  className='H-title'>
+               <h1 className="about-title">EasyRent</h1>
               <h2 className="about-title">Tenant-Landlord <span>Connect</span> </h2>   
-             <div className='subtitle' ></div>
               <p>Streamline Your Rental Experience with Easy, Secure, and</p>
               <p> Instant Messaging</p>
             </div>

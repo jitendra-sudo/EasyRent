@@ -1,29 +1,33 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Components/Home';
-import About from './Components/About';
-import Skills from './Components/Skills';
-import Projects from './Components/Projects';
-import Statistics from './Components/Statistics';
-import Education from './Components/Education';
-import Contact from './Components/Contact';
-import './App.css';
+import { useState } from 'react'
+import { BrowserRouter, Route , Routes } from 'react-router-dom'
+import Home from './components/home'
+import Dashboard from './Tenant/dashboard'
+import MaintenanceForm from './Tenant/maintence'
+import ReportForm from './Tenant/reportforn'
+import ReedbackForm from './Tenant/feedbackform'
+import FeedbackForm from './Tenant/feedbackform'
+import LeaseStatus from './Tenant/leaseStatus'
+import Chatbox from './Tenant/chatbox'
 
-export function App() {
+function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/statistics" element={<Statistics />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/education" element={<Education />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+   <>
+<BrowserRouter>
+  <Routes>
+   <Route path='dashboard' element ={ <Dashboard/>} />
+   <Route path='maintenance' element ={ <MaintenanceForm/>} />
+   <Route path='reportForm' element ={ <ReportForm/>} />
+   <Route path='feedbackForm' element ={ <FeedbackForm/>} />
+   <Route path='leaseStatus' element ={ <LeaseStatus/>} />
+   <Route path='chatbox' element ={ <Chatbox/>} />
+   
+   <Route path='*' element ={ <Dashboard/>} />
+  <Route path="/" element={<Home />} />
+  {/* <Route path="*" element={<Home />} />qqqqqqqq */}
+  </Routes>
+</BrowserRouter>
+   </>
+  )
 }
 
-export default App;
+export default App
