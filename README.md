@@ -70,5 +70,5 @@ The **Tenant-Landlord Communication Platform** is designed to streamline communi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/tenant-landlord-platform.git
+   git clone https://github.com/jitendra-sudo/EasyRent.git
    ```
