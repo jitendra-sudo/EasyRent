@@ -20,14 +20,12 @@ Database: Supabase Link
 # **Directory Structure**:
 
 my-app/
-├── backend/
-├── frontend/
 │   ├── components/
 │   ├── pages/
 │   ├── styles/
 │   ├── utils/
 
-# Video Walkthrough:
+## Video Walkthrough:
 
 Project Features Walkthrough: Video Link
 Codebase Walkthrough: Video Link
