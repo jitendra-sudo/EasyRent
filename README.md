@@ -1,4 +1,4 @@
-# EasyRent Tenant-Landlord Communication Platform
+# EasyRent :- Tenant-Landlord Communication Platform
 
 ## Overview
 
