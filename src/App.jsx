@@ -16,7 +16,7 @@ import LandlordDashboardpage from "./components/landlord/pages/Dashboardpage";
 import LandlordMyProperties from "./components/landlord/pages/PropertyManagement";
 import LandlordMaintenanceCommunication from "./components/landlord/pages/Maintenance&Communication"
 import LandlordRentPayment from "./components/landlord/pages/RentPayment";
-
+import "./index.css"
 
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
         <Route path="landlordMyProperties" element={<LandlordMyProperties />}/>
         <Route path="landlordRentPayment" element={<LandlordRentPayment />}/>
         <Route path="landlordMaintenanceCommunication" element={<LandlordMaintenanceCommunication />}/>
+         
   </Routes>
 </BrowserRouter>
    </>

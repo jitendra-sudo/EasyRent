@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Sidebar from "../components/Sidebar";
 
 const API_URL = "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/rent_payments.json";
 
@@ -56,7 +57,10 @@ const RentPayment = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="flex justify-between ">
+    <Sidebar/>
+
+    <div className="p-6 bg-gray-100 min-h-screen w-[100%] ml-[16%]">
       <h1 className="text-2xl font-bold mb-6">Rent Payment Management</h1>
       {loading ? (
         <p>Loading...</p>
@@ -101,6 +105,7 @@ const RentPayment = () => {
       ) : (
         <p>No rent data available.</p>
       )}
+    </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import Dashboard from "../components/Dashboard"
+import Sidebar from "../components/Sidebar";
 const Dashboardpage = () => {
   const [totalProperties, setTotalProperties] = useState(0);
   const [occupiedProperties, setOccupiedProperties] = useState(0);
@@ -36,12 +37,17 @@ const Dashboardpage = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="flex justify-between ">
+    <Sidebar/>
+
+    <div className="p-6 bg-gray-100 min-h-screen w-[100%] ml-[16%]">
       <h1 className="text-2xl font-bold mb-6">Dashboard Overview</h1>
 
       {loading ? (
         <p className="text-lg text-center">Loading data...</p>
       ) : (
+
+        <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-white p-4 shadow rounded-lg">
             <h2 className="text-lg font-semibold">Total Properties</h2>
@@ -68,7 +74,9 @@ const Dashboardpage = () => {
             <p className="text-3xl font-bold text-yellow-500">{maintenanceRequests}</p>
           </div>
         </div>
+        </div>
       )}
+    </div>
     </div>
   );
 };

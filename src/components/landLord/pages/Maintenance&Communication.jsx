@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Sidebar from "../components/Sidebar";
 
 const REQUESTS_API = "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/maintenance_requests.json";
 const MESSAGES_API = "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/messages.json";
@@ -92,7 +93,11 @@ const MaintenanceCommunication = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="flex justify-between ">
+    <Sidebar/>
+
+    <div className="p-6 bg-gray-100 min-h-screen w-[100%] ml-[16%]">
+
       <h1 className="text-2xl font-bold mb-6">Maintenance & Communication</h1>
 
       {/* Maintenance Requests Section */}
@@ -171,6 +176,7 @@ const MaintenanceCommunication = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

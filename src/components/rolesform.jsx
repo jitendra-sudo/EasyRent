@@ -21,7 +21,7 @@ const Handlelandlord = async () => {
          const userlogin = JSON.parse(localStorage.getItem('userlogin')); 
          let res = await axios.post( 'https://eastrent-f7be6-default-rtdb.firebaseio.com/user.json', { ...userlogin, Role: 'landlord' } );
          console.log(res.data);
-         navigate('/landlordDashboard');
+         navigate('/landlordDashboardpage');
        } catch (error) {
          console.log("Error: Some error occurred", error);
        }

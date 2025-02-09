@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import Sidebar from "../components/Sidebar";
 const API_URL = "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/properties.json";
 
 const MyProperties = () => {
@@ -100,6 +100,10 @@ const MyProperties = () => {
   };
 
   return (
+    <div className="flex justify-between ">
+    <Sidebar/>
+
+    <div className="p-6 bg-gray-100 min-h-screen w-[100%] ml-[16%]">
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">My Properties</h1>
 
@@ -218,6 +222,8 @@ const MyProperties = () => {
           </div>
         </div>
       )}
+    </div>
+    </div>
     </div>
   );
 };
