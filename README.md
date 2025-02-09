@@ -1,74 +1,117 @@
-# EasyRent :- Tenant-Landlord Communication Platform
+Easy Renter
 
-## Overview
+Introduction
 
-The **Tenant-Landlord Communication Platform** is designed to streamline communication and manage maintenance requests and rent payments between tenants and landlords. This platform simplifies property management by providing an easy-to-use interface for tenants to report issues, track their requests, and stay up to date on payment statuses. Landlords can monitor, respond, and keep track of multiple properties effortlessly.
+Easy Renter is a tenant-landlord communication platform designed to streamline property management, rent tracking, and maintenance requests. The project aims to provide a seamless and efficient interface for both tenants and landlords, ensuring clear communication and better management of rental properties.
 
-## Key Features
+Project Type
 
-### 1. **Maintenance Request System**
+Frontend
 
-- **Interactive Submission Form**: Tenants can report issues by categorizing them, selecting urgency levels, and uploading images/videos.
-- **Auto-Suggestions**: Common issues are suggested as tenants type.
-- **Real-Time Validation**: Instant feedback ensures accurate data entry.
+Deployed App
 
-### 2. **Issue Tracking Dashboard**
+Frontend: Easy Renter
+GitHub Repository: Easy Renter
 
-- **Tenant View**: Track maintenance request status with progress bars and status updates.
-- **Landlord View**: View and manage all requests with filtering options by property, issue type, and status.
-- **Timeline of Actions**: See the lifecycle of each request from submission to completion.
+Directory Structure
 
-### 3. **Instant Messaging System**
+my-app/
+├─ frontend/
+│  ├─ components/
+│  ├─ assets/
+│  ├─ utils/
+│  ├─ ...
 
-- **Real-Time Communication**: Direct messaging between tenants and landlords.
-- **Message Indicators**: Notifications for sent, delivered, and read messages.
-- **Push Notifications**: Get alerts when requests are updated or new messages are received.
+Video Walkthrough of the Project
 
-### 4. **Maintenance History & Reports**
+Attach a short video walkthrough demonstrating all features (1-3 minutes).
 
-- **Record of Requests**: View and track the history of maintenance issues.
-- **Exportable Reports**: Landlords can export maintenance data to CSV or PDF.
+Video Walkthrough of the Codebase
 
-### 5. **Rent Payment Tracker**
+Attach a short video walkthrough explaining the code structure (1-5 minutes).
 
-- **Payment History**: Tenants can track past and upcoming payments with a visual calendar.
-- **Rent Reminders**: Interactive reminders help tenants manage payments, and landlords can send overdue alerts.
+Features
 
-### 6. **Mobile-Optimized Design**
+Maintenance Request System: Tenants can submit requests with issue details, urgency, and attachments.
 
-- Fully responsive design for a seamless experience on both desktop and mobile devices.
+Issue Tracking Dashboard: Real-time status updates for maintenance requests.
 
-### 7. **User Profiles & Customization**
+Instant Messaging: Direct chat between tenants and landlords.
 
-- **Personalized Tenant Profiles**: Custom avatars and contact preferences.
-- **Landlord Console**: Manage multiple properties and tenant information from a central dashboard.
+Rent Payment Tracker: Tenants can view due dates, payment history, and landlords can send reminders.
 
-### 8. **Interactive Maintenance Scheduling**
+Notifications & Alerts: Push notifications for messages, maintenance updates, and rent reminders.
 
-- **Appointment Booking**: Tenants can select available time slots for repairs, and landlords can approve or reschedule.
-- **Real-Time Updates**: Tenants are notified of the technician’s arrival and progress.
+User Profiles: Tenants and landlords can manage their profiles and settings.
 
-### 9. **Multi-Language Support**
+Mobile-Friendly UI: Fully responsive design for all devices.
 
-- A language toggle feature ensures accessibility for a wider audience.
+Design Decisions & Assumptions
 
-## AI Enhancements
+Frontend-Only Approach: Since the focus is on UI, the project relies on mock APIs or Firebase for backend interactions.
 
-- **AI Chatbot**: Assists tenants with maintenance requests and FAQ answers.
-- **Voice Commands**: Allows tenants to check request status or submit issues via voice commands.
+Socket.io for Real-Time Communication: Ensures smooth and instant messaging updates.
 
-## Tech Stack
+State Management: Redux/Zustand for efficient global state handling.
 
-- **Frontend**: React.js, CSS3, HTML5
-- **Backend**: Node.js (for API and server-side logic)
-- **Database**: MongoDB
-- **Real-Time Communication**: WebSockets
-- **Voice Command Integration**: Google Speech-to-Text API
-- **AI Chatbot**: NLP API
+UI Framework: Tailwind CSS for a modern and responsive design.
 
-## How to Run Locally
+Installation & Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jitendra-sudo/EasyRent.git
-   ```
+Follow these steps to run the project locally:
+
+# Clone the repository
+git clone https://github.com/jitendra-sudo/EasyRent.git
+
+# Navigate to frontend
+dd EasyRent/frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+
+Usage
+
+After running the project, users can:
+
+Sign in as a tenant or landlord.
+
+Submit and track maintenance requests.
+
+Communicate in real-time through messaging.
+
+Monitor rent payments and receive notifications.
+
+Credentials
+
+Provide sample credentials for testing authenticated features:
+
+Tenant Login:
+Email: tenant@example.com
+Password: tenant123
+
+Landlord Login:
+Email: landlord@example.com
+Password: landlord123
+
+APIs Used
+
+Firebase Authentication: Secure user login and authentication.
+
+Firebase Firestore: Real-time database for storing requests and messages.
+
+Push API: For real-time notifications.
+
+Technology Stack
+
+Frontend: React.js, Vite, Tailwind CSS
+
+State Management: Redux
+
+Real-Time Communication: Socket.io
+
+Authentication & Database: Firebase
+
+Hosting: Netlify
