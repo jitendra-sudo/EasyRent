@@ -48,7 +48,7 @@ const ChatPage = () => {
   };
 
   return (
-    <div className="chat-container">
+    <div  id='chatboxer'    className="chat-container">
       <div className="chat-header">
         <div className="user-profile">
           <Avatar src="" />

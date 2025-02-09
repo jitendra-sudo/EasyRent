@@ -22,7 +22,7 @@ const LeaseStatus = ({ leaseData }) => {
   if (!leaseData) return <div>Loading lease information...</div>;
 
   return (
-    <div className="lease-container">
+    <div id='leaseStatuser'  className="lease-container">
       <div className="lease-header">
         <FaHome size={24} />
         <h2>Lease Status - {leaseData.property.address}</h2>

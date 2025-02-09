@@ -157,14 +157,16 @@ function dashboard() {
          
           
  <div className='dash-link'>
-      <a href=""> <MdOutlineDashboard className='dash-icon' /> <span>Dashboard</span></a>
-      <a href="/chatbox" to ='/chatbox'><FaEnvelope className='dash-icon' /> <span>Message</span></a>
-      {/* <a href="/rent-payments"> <FaMoneyBillWave className='dash-icon' /> <span>Rent Payments</span> </a> */}
-      <a href='/maintenance' to='/maintenance'> <FaTools className='dash-icon' /> <span>Maintenance</span> </a>
-      <a href="/reportForm" to ='/reportForm'> <FaRegFlag className='dash-icon'/> <span>Report</span> </a>
-      <a href="/feedbackForm" to = '/feedbackForm'> <FaComment className='dash-icon'/> <span>Feedback</span> </a>
-      <a href="/leaseStatus" to ='leaseStatus'> <FaFileAlt className='dash-icon'/> <span>Lease Status</span> </a>
-      <a href=""> <MdOutlineSettings className='dash-icon'/> <span>Settings</span> </a>
+               
+
+     <Link className='LINKed' to='/' ><MdOutlineDashboard className='dash-icon' /> <span>Dashboard</span></Link>
+       <Link className='LINKed' to='/chatbox' >   <FaEnvelope className='dash-icon' /> <span>Message</span>    </Link> 
+      <Link className='LINKed' to='/maintenance' >   <FaTools className='dash-icon' /> <span>Maintenance</span>    </Link> 
+      <Link className='LINKed' to='/reportForm' >    <FaRegFlag className='dash-icon'/> <span>Report</span>   </Link>  
+     <Link className='LINKed' to='/feedbackForm' >  <FaComment className='dash-icon'/> <span>Feedback</span>      </Link>
+      <Link className='LINKed' to='/leaseStatus' >     <FaFileAlt className='dash-icon'/> <span>Lease Status</span>   </Link> 
+      <Link className='LINKed' to='' ><MdOutlineSettings className='dash-icon'/> <span>Settings</span></Link>
+     
  </div>
       </div>
 

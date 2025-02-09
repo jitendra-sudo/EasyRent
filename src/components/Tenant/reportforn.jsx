@@ -81,7 +81,7 @@ const ReportForm = () => {
   };
 
   return (
-    <div className="report-container">
+    <div id='reporter' className="report-container">
       <h2 className="report-title">Incident Report Form</h2>
       <ToastContainer />
       
