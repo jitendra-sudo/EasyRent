@@ -1,0 +1,93 @@
+/* Layout */
+.rent-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .rent-content {
+    padding: 24px;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    width: calc(100% - 256px);
+    margin-left: 256px;
+  }
+  
+  /* Title */
+  .rent-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Loading & No Data */
+  .loading-text,
+  .no-data-text {
+    font-size: 1.125rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Table */
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .rent-table {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-collapse: collapse;
+  }
+  
+  .rent-table thead {
+    background-color: #e5e7eb;
+  }
+  
+  .rent-table th,
+  .rent-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Status Colors */
+  .status {
+    font-weight: bold;
+  }
+  
+  .status.pending {
+    color: #dc2626; /* Red */
+  }
+  
+  .status.paid {
+    color: #16a34a; /* Green */
+  }
+  
+  /* Buttons */
+  .pending-btn,
+  .paid-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .pending-btn {
+    background-color: #dc2626;
+  }
+  
+  .pending-btn:hover {
+    background-color: #b91c1c;
+  }
+  
+  .paid-btn {
+    background-color: #16a34a;
+  }
+  
+  .paid-btn:hover {
+    background-color: #15803d;
+  }
+  

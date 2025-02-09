@@ -1,0 +1,127 @@
+/* Layout */
+.maintenance-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .maintenance-content {
+    padding: 24px;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    width: calc(100% - 256px);
+    margin-left: 256px;
+  }
+  
+  /* Title */
+  .maintenance-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Grid */
+  .maintenance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 16px;
+  }
+  
+  /* Maintenance Requests */
+  .maintenance-requests {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .request-card {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .status.pending {
+    color: #dc2626;
+    font-weight: bold;
+  }
+  
+  .status.resolved {
+    color: #16a34a;
+    font-weight: bold;
+  }
+  
+  .request-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .resolve-btn {
+    background-color: #16a34a;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .progress-btn {
+    background-color: #facc15;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* Communication */
+  .communication-section {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tenant-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .messages-box {
+    border: 1px solid #ddd;
+    padding: 8px;
+    height: 250px;
+    overflow-y: auto;
+    background: #f3f4f6;
+    border-radius: 6px;
+  }
+  
+  .message {
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+  }
+  
+  .message.landlord {
+    background: #bfdbfe;
+  }
+  
+  .message.tenant {
+    background: #d1d5db;
+  }
+  
+  .message-input {
+    display: flex;
+    margin-top: 8px;
+  }
+  
+  .send-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

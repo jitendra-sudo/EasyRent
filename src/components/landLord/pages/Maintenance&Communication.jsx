@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
+import "./MaintenanceCommunication.css"; // Import CSS
 
-const REQUESTS_API = "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/maintenance_requests.json";
-const MESSAGES_API = "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/messages.json";
+const REQUESTS_API =
+  "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/maintenance_requests.json";
+const MESSAGES_API =
+  "https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/messages.json";
 
 const MaintenanceCommunication = () => {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedTenant, setSelectedTenant] = useState(null);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]); // ✅ Ensuring it's always an array
   const [newMessage, setNewMessage] = useState("");
 
   useEffect(() => {
@@ -37,10 +40,8 @@ const MaintenanceCommunication = () => {
 
   const updateRequestStatus = async (id, status) => {
     try {
-      await axios.patch(
-        `https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/maintenance_requests/${id}.json`,
-        { status }
-      );
+      await axios.patch(`${REQUESTS_API.replace(".json", `/${id}.json`)}`, { status });
+
       setRequests((prev) =>
         prev.map((req) => (req.id === id ? { ...req, status } : req))
       );
@@ -49,28 +50,28 @@ const MaintenanceCommunication = () => {
     }
   };
 
-  // 🔹 Fetch Messages for a Selected Tenant
   const fetchMessages = async (tenantName) => {
     try {
       const response = await axios.get(MESSAGES_API);
       if (response.data && response.data[tenantName]) {
-        setMessages(response.data[tenantName]);
+        const tenantMessages = response.data[tenantName];
+
+        // ✅ Ensure messages is an array
+        setMessages(Array.isArray(tenantMessages) ? tenantMessages : Object.values(tenantMessages));
       } else {
-        setMessages([]);
+        setMessages([]); // ✅ Always set as an array
       }
     } catch (error) {
       console.error("Error fetching messages:", error);
-      setMessages([]);
+      setMessages([]); // ✅ Always fallback to an array
     }
   };
 
-  // 🔹 Handle Tenant Selection
   const handleSelectTenant = (tenantName) => {
     setSelectedTenant(tenantName);
     fetchMessages(tenantName);
   };
 
-  // 🔹 Send a New Message
   const handleSendMessage = async () => {
     if (!selectedTenant || !newMessage.trim()) return;
 
@@ -81,11 +82,9 @@ const MaintenanceCommunication = () => {
     };
 
     try {
-      await axios.post(
-        `https://rent-bc133-default-rtdb.asia-southeast1.firebasedatabase.app/Landlorddb/messages/${selectedTenant}.json`,
-        newMsg
-      );
-      setMessages([...messages, newMsg]); // Update UI
+      await axios.post(`${MESSAGES_API.replace(".json", `/${selectedTenant}.json`)}`, newMsg);
+
+      setMessages((prevMessages) => [...prevMessages, newMsg]); // ✅ Ensure `messages` is updated safely
       setNewMessage("");
     } catch (error) {
       console.error("Error sending message:", error);
@@ -93,90 +92,70 @@ const MaintenanceCommunication = () => {
   };
 
   return (
-    <div className="flex justify-between ">
-    <Sidebar/>
-
-    <div className="p-6 bg-gray-100 min-h-screen w-[100%] ml-[16%]">
-
-      <h1 className="text-2xl font-bold mb-6">Maintenance & Communication</h1>
-
-      {/* Maintenance Requests Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-4 shadow rounded-lg">
-          <h2 className="text-lg font-semibold mb-4">Maintenance Requests</h2>
-          {loading ? (
-            <p>Loading...</p>
-          ) : requests.length > 0 ? (
-            requests.map((request) => (
-              <div key={request.id} className="border p-3 mb-3 rounded">
-                <p><strong>Tenant:</strong> {request.tenant_name}</p>
-                <p><strong>Property:</strong> {request.property}</p>
-                <p><strong>Issue:</strong> {request.description}</p>
-                <p className={`font-semibold ${request.status === "Pending" ? "text-red-500" : "text-green-500"}`}>
-                  Status: {request.status}
-                </p>
-                <div className="mt-2 flex gap-2">
-                  <button
-                    className="px-4 py-2 bg-green-500 text-white rounded cursor-pointer hover:bg-green-600"
-                    onClick={() => updateRequestStatus(request.id, "Resolved")}
-                  >
-                    Mark as Resolved
-                  </button>
-                  <button
-                    className="px-4 py-2 bg-yellow-500 text-white rounded cursor-pointer hover:bg-yellow-600"
-                    onClick={() => updateRequestStatus(request.id, "In Progress")}
-                  >
-                    In Progress
-                  </button>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>No maintenance requests available.</p>
-          )}
-        </div>
-
-        {/* Communication Section */}
-        <div className="bg-white p-4 shadow rounded-lg">
-          <h2 className="text-lg font-semibold mb-4">Tenant Communication</h2>
-          <select
-            className="p-2 border rounded w-full mb-4 cursor-pointer"
-            onChange={(e) => handleSelectTenant(e.target.value)}
-          >
-            <option value="">Select Tenant</option>
-            {requests.map((request) => (
-              <option key={request.id} value={request.tenant_name}>{request.tenant_name}</option>
-            ))}
-          </select>
-          <div className="border p-4 h-60 overflow-auto rounded mb-4 bg-gray-50">
-            {messages.length > 0 ? (
-              messages.map((msg, index) => (
-                <div key={index} className={`p-2 mb-2 rounded ${msg.sender === "Landlord" ? "bg-blue-200 text-right" : "bg-gray-200 text-left"}`}>
-                  <p><strong>{msg.sender}:</strong> {msg.message}</p>
+    <div className="maintenance-container">
+      <Sidebar />
+      <div className="maintenance-content">
+        <h1 className="maintenance-title">Maintenance & Communication</h1>
+        <div className="maintenance-grid">
+          <div className="maintenance-requests">
+            <h2>Maintenance Requests</h2>
+            {loading ? (
+              <p>Loading...</p>
+            ) : requests.length > 0 ? (
+              requests.map((request) => (
+                <div key={request.id} className="request-card">
+                  <p><strong>Tenant:</strong> {request.tenant_name}</p>
+                  <p><strong>Property:</strong> {request.property}</p>
+                  <p><strong>Issue:</strong> {request.description}</p>
+                  <p className={`status ${request.status === "Pending" ? "pending" : "resolved"}`}>
+                    Status: {request.status}
+                  </p>
+                  <div className="request-buttons">
+                    <button className="resolve-btn" onClick={() => updateRequestStatus(request.id, "Resolved")}>
+                      Mark as Resolved
+                    </button>
+                    <button className="progress-btn" onClick={() => updateRequestStatus(request.id, "In Progress")}>
+                      In Progress
+                    </button>
+                  </div>
                 </div>
               ))
             ) : (
-              <p>No messages.</p>
+              <p>No maintenance requests available.</p>
             )}
           </div>
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="Type a message..."
-              className="p-2 border rounded w-full"
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-            />
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded ml-2 cursor-pointer hover:bg-blue-600"
-              onClick={handleSendMessage}
-            >
-              Send
-            </button>
+
+          <div className="communication-section">
+            <h2>Tenant Communication</h2>
+            <select className="tenant-select" onChange={(e) => handleSelectTenant(e.target.value)}>
+              <option value="">Select Tenant</option>
+              {requests.map((request) => (
+                <option key={request.id} value={request.tenant_name}>{request.tenant_name}</option>
+              ))}
+            </select>
+            <div className="messages-box">
+              {messages.length > 0 ? (
+                messages.map((msg, index) => (
+                  <div key={index} className={`message ${msg.sender === "Landlord" ? "landlord" : "tenant"}`}>
+                    <p><strong>{msg.sender}:</strong> {msg.message}</p>
+                  </div>
+                ))
+              ) : (
+                <p>No messages.</p>
+              )}
+            </div>
+            <div className="message-input">
+              <input
+                type="text"
+                placeholder="Type a message..."
+                value={newMessage}
+                onChange={(e) => setNewMessage(e.target.value)}
+              />
+              <button className="send-btn" onClick={handleSendMessage}>Send</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

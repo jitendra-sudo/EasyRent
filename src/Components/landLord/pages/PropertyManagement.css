@@ -1,0 +1,165 @@
+/* Layout */
+.properties-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .properties-content {
+    padding: 24px;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    width: calc(100% - 256px);
+    margin-left: 256px;
+  }
+  
+  /* Title */
+  .properties-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Add Property Button */
+  .add-property-btn {
+    padding: 8px 16px;
+    background-color: #10b981;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 12px;
+  }
+  
+  .add-property-btn:hover {
+    background-color: #059669;
+  }
+  
+  /* Property Form */
+  .property-form {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+  }
+  
+  .property-form input, .property-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  
+  /* Properties Grid */
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  
+  .property-card {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .manage-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .manage-btn:hover {
+    background-color: #2563eb;
+  }
+  /* Modal Overlay (Background) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays on top */
+  }
+  
+  /* Modal Content (Popup Box) */
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Smooth Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Input Fields Inside Modal */
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Buttons Inside Modal */
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .close-btn,
+  .save-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .close-btn {
+    background-color: #ef4444; /* Red */
+  }
+  
+  .close-btn:hover {
+    background-color: #dc2626;
+  }
+  
+  .save-btn {
+    background-color: #10b981; /* Green */
+  }
+  
+  .save-btn:hover {
+    background-color: #059669;
+  }
+  
