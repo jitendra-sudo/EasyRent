@@ -12,17 +12,12 @@ Easy Renter is a tenant-landlord communication platform designed to streamline p
 
 ## Directory Structure
     my-app/
-    ├─ frontend/
     │  ├─ components/
     │  ├─ assets/
     │  ├─ utils/
     │  ├─ ...
 
-## Video Walkthrough of the Project
-_Attach a short video walkthrough demonstrating all features (1-3 minutes)._
 
-## Video Walkthrough of the Codebase
-_Attach a short video walkthrough explaining the code structure (1-5 minutes)._
 
 ## Features
 - **Maintenance Request System:** Tenants can submit requests with issue details, urgency, and attachments.
@@ -47,7 +42,7 @@ Follow these steps to run the project locally:
 git clone https://github.com/jitendra-sudo/EasyRent.git
 
 # Navigate to the frontend directory
-cd EasyRent/frontend
+cd EasyRent
 
 # Install dependencies
 npm install
