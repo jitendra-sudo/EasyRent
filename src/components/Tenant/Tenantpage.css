@@ -1,0 +1,318 @@
+/* Variables */
+:root {
+    --primary-color: rgba(78, 224, 78, 0.83);
+    --secondary-color: #1e40af;
+    --accent-color: #f59e0b;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --background-light:rgba(116, 113, 113, 0.03);
+    --surface-color: #ffffff;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+
+  /* Base Styles */
+  #tenantFinderApp {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    min-height: 100vh;
+  }
+  
+
+  
+  /* Header Styles */
+  #appHeader {
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 0;
+    border: 2px solid transparent;
+    /* padding: 2rem 1rem; */
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    text-align: center;
+  }
+  
+  .app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  /* Search Filters */
+  #searchSection {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-evenly;
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
+  }
+  
+  .filter-group {
+    margin-bottom: 1.5rem;
+    /* border: 2px solid; */
+    width: 200px;
+  }
+  
+  .filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+   
+  }
+  .filter-input option{
+    background-color: transparent;
+  }
+  .filter-input {
+    /* width: 100%; */
+    padding: 0.25rem 1rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.1);
+    color: rgb(61, 60, 60);
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .filter-input:focus {
+    outline: none;
+    border-color: white;
+    background: rgba(255,255,255,0.2);
+  }
+  
+  /* Price Slider */
+  .price-range-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0.5rem 0; */
+    /* border: 2px solid; */
+  }
+  
+  .price-slider {
+    width: 100px;
+    height: 4px;
+    margin: 1rem 0;
+   
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.3);
+    border-radius: 2px;
+  }
+  
+  .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--surface-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .price-value {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+  }
+  
+  .main-content{
+    display: flex;
+    justify-content: center;
+    border: 2px solid transparent;
+  }
+
+  /* Listings Grid */
+  .listings-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 1rem;
+    /* padding: 2rem; */
+  /* border: 2px solid; */
+   
+    align-items: center;
+    max-width: 1270px;
+    margin:30px  0px;
+  }
+  
+  .listing-card {
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+   width: 300px;
+  
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  
+  .listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-image-container {
+    position: relative;
+    height: 180px;
+  }
+  
+  .listing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Favorite Button */
+  .favorite-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .favorite-button.favorited .heart-icon {
+    fill: #ef4444;
+    stroke: #ef4444;
+  }
+  
+  .heart-icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text-dark);
+    stroke-width: 2;
+    transition: var(--transition);
+  }
+  
+  .price-tag {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+  }
+  
+  /* Card Details */
+  .card-details {
+    padding:2px 15px;
+    
+  }
+  
+  .listing-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+  
+  .location-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background: rgba(37, 99, 235, 0.05);
+    border-radius: var(--radius-md);
+  }
+  
+  .meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+ .sendrequest button{
+        width: 100%;
+        padding: 0.5rem;
+        background:rgb(26, 235, 26);
+        border: none;
+        color:white ;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        margin-bottom: 4px;
+ }
+
+ .sendrequest button:hover{
+    background:rgb(35, 215, 35);
+
+ }
+
+  /* Map Sidebar */
+  #mapSection {
+    padding: 2rem;
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin: 2rem;
+  }
+  
+  .map-placeholder {
+    height: 600px;
+    background: var(--background-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .app-title {
+      font-size: 2rem;
+    }
+  
+    #searchSection {
+      padding: 1rem;
+    }
+  
+    .listings-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+  
+    #mapSection {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }

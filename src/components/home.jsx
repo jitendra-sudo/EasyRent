@@ -23,46 +23,72 @@ export const Home = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    let data = { Email: emaillogin, Password: passwordlogin };
+    const userlogin = { Email: emaillogin, Password: passwordlogin };
     try {
-      const response = await axios.post('YOUR_LOGIN_API_ENDPOINT', data);
-      console.log(response.data);
-      navigate('/Dashboard');
+      const res = await axios.get('https://eastrent-f7be6-default-rtdb.firebaseio.com/user.json');
+      const usersData = res.data;
+      const usersArray = Object.entries(usersData).map(([id, user]) => ({ id, ...user, }));
+      const matchedUser = usersArray.find((user) =>  user.email.toLowerCase() === emaillogin.toLowerCase() && user.password === passwordlogin );
+
+      if (matchedUser) {
+        localStorage.setItem('userlogin', JSON.stringify(userlogin));
+  
+        if (matchedUser.role.toLowerCase() === 'tenant') {
+          navigate('/tenant');
+        } else if (matchedUser.role.toLowerCase() === 'landlord') {
+          navigate('/landlordDashboard');
+        }
+  
+        alert('Successfully logged in');
+      } 
+  
+      // console.log(usersArray);
       setEmaillogin("");
       setPasswordlogin("");
     } catch (error) {
-      console.error('Login failed', error);
-      setError("Something went wrong");
+      console.log('Login failed');
+      alert("Invalid email or password");
     } finally {
       setLoading(false);
     }
   };
+  
 
   const handleSignup = () => {
     setAuthStatus(false);
   };
 
-  const handleSubmitSignup = async (e) => {
+
+
+
+  const handleSubmitSignup = async(e) => {
     e.preventDefault();
     setLoading(true);
+    const userlog = { Email: email, Password: password };
     const userData = { Name: name, Username: username, Email: email, Phone: phone, Password: password };
-
+    localStorage.setItem('userData', JSON.stringify(userData));
+    localStorage.setItem('userlogin', JSON.stringify(userlog));
     try {
-      let res = await axios.post('YOUR_SIGNUP_API_ENDPOINT', userData);
-      console.log(res.data);
+      navigate('/role');
+      console.log(userData);
+      // alert('Successful signup');
       setName('');
       setUsername('');
       setEmail('');
       setPhone('');
       setPassword('');
     } catch (error) {
-      setError("Some problem in data send");
       alert("Some problem in data send");
     } finally {
       setLoading(false);
     }
   };
+
+
+
+  if(loading){
+    return <div style={{display:'flex' , justifyContent:'center' , alignItems:'center' , height:'100vh'}}>Loading...</div>;
+  }
 
   const handleLoginswitch = () => {
     setAuthStatus(true);
@@ -103,7 +129,7 @@ export const Home = () => {
                     <label className="label2" htmlFor="password">Password :</label>
                     <input className="enter20" type="password" id="password" placeholder="Enter Your password" value={passwordlogin} onChange={(e) => setPasswordlogin(e.target.value)} />
 
-                    <button type="button" id="forgetbtn" onClick={() => navigate('/forget')}>Forget Password?</button>
+                    <button type="button" id="forgetbtn" onClick={() => navigate('/resetpassword')}>Forget Password?</button>
 
                     <button className="enter20" id="submit" type="submit" disabled={loading}>
                       {loading ? "Logging in..." : "Login"}
@@ -131,7 +157,7 @@ export const Home = () => {
                     <input type="email" className='enter' id="email" name="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
                     <label className='label1' htmlFor="phone">Phone number</label>
-                    <input type="text" className='enter' id="phone" name="phone" placeholder="Enter your phone" value={phone} onChange={(e) => setPhone(e.target.value)} maxLength={10} required />
+                    <input type="number" className='enter' id="phone" name="phone" placeholder="Enter your phone" value={phone} onChange={(e) => setPhone(e.target.value)} maxLength={10} required />
 
                     <label className='label1' htmlFor="password">Password</label>
                     <input type="password" className='enter' id="password" name="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} required />

@@ -1,0 +1,88 @@
+/* Container to center the edit form */
+.profile-edit-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f7f7f7;
+    padding: 1rem;
+  }
+  
+  /* Card styling for a clean look */
+  .profile-edit-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Title styling */
+  .profile-edit-title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Avatar styling (if additional customization is needed) */
+  .profile-avatar {
+    margin-bottom: 1rem;
+  }
+  
+  /* Form styling */
+  .profile-edit-form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .profile-edit-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .profile-edit-form .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Error and success messages */
+  .error-message {
+    color: #d9534f;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .success-message {
+    color: #5cb85c;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Submit button styling */
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background: #0056b3;
+  }
+  
+  .submit-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,185 @@
+.lease-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  
+  .lease-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+  }
+  
+  .lease-header h2 {
+    margin: 0;
+    color: #2d3748;
+  }
+  
+  .lease-overview {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .lease-section {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .lease-section h3 {
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+  }
+  
+  .date-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .date-item label {
+    display: block;
+    font-size: 0.9rem;
+    color: #718096;
+  }
+  
+  .date-item div {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: #48bb78;
+    transition: width 0.3s ease;
+  }
+  
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .status-item label {
+    display: block;
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+  }
+  
+  .amount {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .status-indicator {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+  }
+  
+  .status-indicator--current {
+    background: #c6f6d5;
+    color: #22543d;
+  }
+  
+  .status-indicator--overdue {
+    background: #fed7d7;
+    color: #822727;
+  }
+  
+  .refund-status {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .refund-status--yes {
+    color: #48bb78;
+  }
+  
+  .refund-status--no {
+    color: #e53e3e;
+  }
+  
+  .documents-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .document-list {
+    display: grid;
+    gap: 0.5rem;
+  }
+  
+  .document-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+  }
+  
+  .download-button {
+    background: #4299e1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .download-button:hover {
+    background: #3182ce;
+  }
+  
+  .important-dates {
+    background: #fff;
+  }
+  
+  .date-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+  
+  .date-entry {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .date-entry div:first-child {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .date-entry div:last-child {
+    font-size: 0.875rem;
+    color: #718096;
+  }

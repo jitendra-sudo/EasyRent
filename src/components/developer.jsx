@@ -3,6 +3,10 @@ import { FaGithub, FaLinkedin, FaCode, FaMobileAlt } from 'react-icons/fa';
 import './developer.css';
 import jitendra from './jitendra.png'
 import sharvali from './sharvali.jpeg'
+import anamika from './anamika.jpeg'
+import Avatar from '@mui/material/Avatar';
+
+
 const Developers = () => {
  
 
@@ -16,7 +20,7 @@ const Developers = () => {
             <div  className="dev-card">
               <div className="card-image">
               <div className='profile-img'>
-                 <img  src= '' alt= 'krishan'  />
+                 <Avatar  src= 'k' style={{width:'120px' , height:'120px'}} alt= 'krishan' />
               </div>
                 <div className="social-links">
                   <a href="#"><FaGithub /></a>
@@ -57,11 +61,11 @@ const Developers = () => {
 
               <div className="card-image">
               <div className='profile-img'>
-                 <img  src= '' alt= 'anamika'  />
+                 <img  src= {anamika} alt= 'anamika'  />
               </div>
                 <div className="social-links">
                   <a href="#"><FaGithub /></a>
-                  <a href="#"><FaLinkedin /></a>
+                  <a href="https://www.linkedin.com/in/anamika-dutta-0a2291302/"><FaLinkedin /></a>
                 </div>
               </div>
 

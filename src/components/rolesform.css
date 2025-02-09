@@ -1,0 +1,44 @@
+.rolesform{
+    background: url('rent2.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .role {
+    text-align: center;
+    animation: slideIn 1s ease-out forwards;
+  }
+  
+.role button{
+    width: 150%;
+    border: 2px solid;
+     font-size: 20px;
+     color: teal;
+     background:rgba(164, 203, 206, 0.7);
+     border: 1px solid transparent;
+     margin: 7px;
+     padding: 8px 12px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: bold;
+     border-radius: 10px;
+}
+
+.role button:hover{
+    color: rgb(18, 198, 21);
+    background: rgba(52, 209, 35, 0.6);
+}
